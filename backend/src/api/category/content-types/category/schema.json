@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::video.video",
+      "inversedBy": "categories"
+    },
+    "images": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::image.image",
+      "inversedBy": "categories"
+    },
+    "downloads": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::download.download",
+      "inversedBy": "categories"
+    },
+    "icon_name": {
+      "type": "string"
+    }
+  }
+}

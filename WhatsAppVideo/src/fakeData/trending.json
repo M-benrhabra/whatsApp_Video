@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "image": "trend",
+    "title": "title for testing trending",
+    "views": "45k"
+  },
+  {
+    "id": 2,
+    "image": "trend1",
+    "title": "title for testing trending",
+    "views": "5k"
+  },
+  {
+    "id": 3,
+    "image": "trend2",
+    "title": "title for testing trending",
+    "views": "4k"
+  },
+  {
+    "id": 4,
+    "image": "trend3",
+    "title": "title for testing trending",
+    "views": "8k"
+  },
+  {
+    "id": 5,
+    "image": "trend4",
+    "title": "title for testing trending",
+    "views": "11k"
+  },
+  {
+    "id": 6,
+    "image": "trend5",
+    "title": "title for testing trending",
+    "views": "2k"
+  },
+  {
+    "id": 7,
+    "image": "trend6",
+    "title": "title for testing trending",
+    "views": "4k"
+  }
+]
