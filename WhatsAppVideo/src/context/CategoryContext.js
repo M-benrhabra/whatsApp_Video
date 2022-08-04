@@ -4,7 +4,7 @@ import React, {createContext, useState} from 'react';
 export const CategoryContext = createContext(null);
 
 export const CategoryProvider = ({children}) => {
-  const [infos, setInfos] = useState({id: null});
+  const [infos, setInfos] = useState(null);
 
   return (
     <CategoryContext.Provider value={{infos, setInfos}}>

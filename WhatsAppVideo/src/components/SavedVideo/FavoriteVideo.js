@@ -10,6 +10,9 @@ import {
 } from 'react-native';
 import Card from '../Card';
 import Share from '../share/Share';
+import VideoPlayer from 'react-native-video-player';
+import {baseURL} from '../../constants/BaseURL';
+import CardNoVideos from '../Content_Loader/CardNoVideos';
 
 const FavoriteVideo = () => {
   const [favoriteList, setFavoriteList] = useState([]);
@@ -20,19 +23,33 @@ const FavoriteVideo = () => {
       ? setFavoriteList(JSON.parse(getFavorite))
       : null;
   }, []);
+  console.log('favoriteList', favoriteList);
   return (
     <View style={styles.screen}>
-      <FlatList
-        data={favoriteList}
-        renderItem={({item}) => {
-          return (
-            <Card>
-              <Image source={item.src} style={styles.image} />
-              <Share ShowFavorite={false} />
-            </Card>
-          );
-        }}
-      />
+      {favoriteList.length > 0 ? (
+        <FlatList
+          data={favoriteList}
+          renderItem={({item}) => {
+            return (
+              <Card>
+                <VideoPlayer
+                  video={{
+                    uri: `${baseURL}${item?.attributes?.picture?.data[0]?.attributes?.url}`,
+                  }}
+                  videoWidth={1600}
+                  videoHeight={900}
+                  autoplay={false}
+                  showDuration={true}
+                  // thumbnail={{uri: 'https://i.picsum.photos/id/866/1600/900.jpg'}}
+                />
+                <Share ShowFavorite={false} />
+              </Card>
+            );
+          }}
+        />
+      ) : (
+        <CardNoVideos />
+      )}
     </View>
   );
 };

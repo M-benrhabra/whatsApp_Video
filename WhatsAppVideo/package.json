@@ -28,7 +28,10 @@
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.7.2",
     "react-native-svg": "^12.4.3",
-    "react-native-vector-icons": "^8.1.0"
+    "react-native-vector-icons": "^8.1.0",
+    "react-native-video": "^2.3.1",
+    "react-native-video-controls": "^2.8.1",
+    "react-native-video-player": "^0.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

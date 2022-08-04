@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-07-31T10:19:33.469Z"
+    "x-generation-date": "2022-08-02T16:27:03.089Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1845,6 +1845,9 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "trend": {
+                                    "type": "boolean"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -3711,6 +3714,9 @@
                                     }
                                   }
                                 },
+                                "trend": {
+                                  "type": "boolean"
+                                },
                                 "createdAt": {
                                   "type": "string",
                                   "format": "date-time"
@@ -4741,6 +4747,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "trend": {
+                                                  "type": "boolean"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -6942,6 +6951,9 @@
                                                     }
                                                   }
                                                 }
+                                              },
+                                              "trend": {
+                                                "type": "boolean"
                                               },
                                               "createdAt": {
                                                 "type": "string",
@@ -9176,6 +9188,9 @@
                                                     }
                                                   }
                                                 },
+                                                "trend": {
+                                                  "type": "boolean"
+                                                },
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -11377,6 +11392,9 @@
                                                   }
                                                 }
                                               },
+                                              "trend": {
+                                                "type": "boolean"
+                                              },
                                               "createdAt": {
                                                 "type": "string",
                                                 "format": "date-time"
@@ -12778,6 +12796,9 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "trend": {
+                "type": "boolean"
               }
             }
           }
@@ -13611,6 +13632,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "trend": {
+                                                  "type": "boolean"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -14910,6 +14934,9 @@
                         }
                       }
                     },
+                    "trend": {
+                      "type": "boolean"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -15812,6 +15839,9 @@
                                                     }
                                                   }
                                                 }
+                                              },
+                                              "trend": {
+                                                "type": "boolean"
                                               },
                                               "createdAt": {
                                                 "type": "string",
@@ -17110,6 +17140,9 @@
                         }
                       }
                     }
+                  },
+                  "trend": {
+                    "type": "boolean"
                   },
                   "createdAt": {
                     "type": "string",
