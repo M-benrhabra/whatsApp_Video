@@ -7,4 +7,6 @@ export default {
   black: '#000',
   blue: '#1743df',
   red: '#e33636',
+  blueSecond: '#988ddc',
+  redSecond: '#ee8989',
 };

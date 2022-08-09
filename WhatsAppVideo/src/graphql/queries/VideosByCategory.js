@@ -7,7 +7,7 @@ const GET_VIDEOS_BY_CATEGORY = gql`
         id
         attributes {
           title
-          videos {
+          videos(filters:{published:{eq:true}}) {
             data {
               id
               attributes {

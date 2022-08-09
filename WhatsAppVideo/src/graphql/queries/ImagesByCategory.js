@@ -7,7 +7,7 @@ const GET_IMAGE_BY_CATEGORY = gql`
         id
         attributes {
           title
-          images {
+          images(pagination: { page: 1, pageSize: 20 },filters:{published:{eq:true}}){
             data {
               id
               attributes {
@@ -17,6 +17,8 @@ const GET_IMAGE_BY_CATEGORY = gql`
                     attributes {
                       name
                       formats
+                      ext
+                      url
                     }
                   }
                 }

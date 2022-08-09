@@ -7,7 +7,7 @@ const GET_TRENDING_BY_CATEGORY = gql`
         id
         attributes {
           title
-          videos(filters: {trend: {eq: true}}) {
+          videos(filters:{trend: {eq : true}, and:{published:{eq:true}}})  {
             data {
               id
               attributes {

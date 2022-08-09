@@ -2,7 +2,7 @@ import {gql} from '@apollo/client';
 
 const GET_TRENDING_VIDEOS = gql`
   query GetTrendigVideos {
-    videos(filters: {trend: {eq: true}}) {
+    videos(filters:{trend: {eq : true}, and:{published:{eq:true}}})  {
       data {
         id
         attributes {
