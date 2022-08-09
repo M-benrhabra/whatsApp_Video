@@ -2,7 +2,7 @@ import {gql} from '@apollo/client';
 
 const GET_VIDEOS = gql`
   query GetVideos {
-    videos {
+    videos(filters:{published:{eq: true}}) {
       data {
         id
         attributes {

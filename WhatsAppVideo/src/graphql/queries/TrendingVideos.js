@@ -1,19 +1,17 @@
 import {gql} from '@apollo/client';
 
-const GET_IMAGES = gql`
-  query GetImages {
-    images(pagination: { page: 1, pageSize: 20 }, filters:{published:{eq:true}}) {
+const GET_TRENDING_VIDEOS = gql`
+  query GetTrendigVideos {
+    videos(filters:{trend: {eq : true}, and:{published:{eq:true}}})  {
       data {
         id
         attributes {
           title
-          picture{
+          picture {
             data {
               id
               attributes {
                 name
-                formats
-                ext
                 url
               }
             }
@@ -32,4 +30,4 @@ const GET_IMAGES = gql`
   }
 `;
 
-export default GET_IMAGES;
+export default GET_TRENDING_VIDEOS;

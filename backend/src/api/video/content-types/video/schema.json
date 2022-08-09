@@ -36,6 +36,10 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "videos"
+    },
+    "trend": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

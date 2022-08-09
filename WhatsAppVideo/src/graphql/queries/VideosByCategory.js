@@ -1,13 +1,13 @@
 import {gql} from '@apollo/client';
 
-const GET_IMAGE_BY_CATEGORY = gql`
+const GET_VIDEOS_BY_CATEGORY = gql`
   query GetCategory($id: ID!) {
     category(id: $id) {
       data {
         id
         attributes {
           title
-          images {
+          videos(filters:{published:{eq:true}}) {
             data {
               id
               attributes {
@@ -16,7 +16,7 @@ const GET_IMAGE_BY_CATEGORY = gql`
                   data {
                     attributes {
                       name
-                      formats
+                      url
                     }
                   }
                 }
@@ -29,4 +29,4 @@ const GET_IMAGE_BY_CATEGORY = gql`
   }
 `;
 
-export default GET_IMAGE_BY_CATEGORY;
+export default GET_VIDEOS_BY_CATEGORY;

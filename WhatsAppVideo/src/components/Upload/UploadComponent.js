@@ -7,7 +7,7 @@ const UploadComponent = () => {
     return (
         <View style={styles.screen} >
             <View style={styles.border}>
-            <FontAwesome5.Button name='cloud-upload-alt' size={80} color={Color.gray} backgroundColor='transparent' 
+            <FontAwesome5.Button style={styles.icon} name='cloud-upload-alt' size={80} color={Color.gray} backgroundColor='transparent' 
             onPress={() => {console.log('cleck')}}
             />
             </View>
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         borderRadius: 150/2,
         borderWidth: 4,
         borderColor: Color.gray,
+        display:'flex',
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -38,5 +39,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: Color.gray,
         marginTop: 10
+    },
+    icon: {
+        display:'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 })

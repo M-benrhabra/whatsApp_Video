@@ -1,15 +1,13 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import UploadComponent from '../components/Upload/UploadComponent'
+import React from 'react';
+import UploadComponent from '../components/Upload/UploadComponent';
+import UploadForm from '../components/Upload/UploadForm';
 
 const UploadScreen = () => {
-    return (
-        <>
-            <UploadComponent />
-        </>
-    )
-}
+  return (
+    <>
+      <UploadForm />
+    </>
+  );
+};
 
-export default UploadScreen
-
-const styles = StyleSheet.create({})
+export default UploadScreen;
