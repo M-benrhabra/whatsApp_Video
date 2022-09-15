@@ -12,7 +12,7 @@ import {
 import Card from '../Card';
 import CardLoader from '../Content_Loader/CardLoader';
 import CardNoVideos from '../Content_Loader/CardNoVideos';
-import Share from '../share/Share';
+import ShareIcons from '../share/ShareIcons';
 import GET_TRENDING_VIDEOS from '../../graphql/queries/TrendingVideos';
 import GET_TRENDING_BY_CATEGORY from '../../graphql/queries/TrendingByCategory';
 import {CategoryContext} from '../../context/CategoryContext';
@@ -99,7 +99,7 @@ const VideoComponent = () => {
                   // thumbnail={{uri: 'https://i.picsum.photos/id/866/1600/900.jpg'}}
                 />
                 {/* <Share /> */}
-                <Share
+                <ShareIcons
                   onSevedItem={() =>
                     ifExists(item) ? onRemoveFavorite(item) : onFavorite(item)
                   }

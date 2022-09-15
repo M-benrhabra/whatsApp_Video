@@ -3,9 +3,6 @@ import { View, StyleSheet } from 'react-native';
 import {
     useTheme,
     Avatar,
-    Title,
-    Caption,
-    Paragraph,
     Drawer,
     Text,
     TouchableRipple,
@@ -44,6 +41,7 @@ export function DrawerContent(props) {
                                 name="home" 
                                 color={color}
                                 size={size}
+                                type="FontAwesome5"
                                 />
                             )}
                             label="Home"

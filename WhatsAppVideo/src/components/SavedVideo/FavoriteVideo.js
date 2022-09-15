@@ -9,7 +9,7 @@ import {
   FlatList,
 } from 'react-native';
 import Card from '../Card';
-import Share from '../share/Share';
+import ShareIcons from '../share/ShareIcons';
 import VideoPlayer from 'react-native-video-player';
 import {baseURL} from '../../constants/BaseURL';
 import CardNoVideos from '../Content_Loader/CardNoVideos';
@@ -19,9 +19,7 @@ const FavoriteVideo = () => {
   useEffect(async () => {
     const getFavorite = await AsyncStorage.getItem('favoriteList');
     console.log('favorite==>', getFavorite);
-    return getFavorite != null
-      ? setFavoriteList(JSON.parse(getFavorite))
-      : null;
+    return getFavorite != null ? setFavoriteList(JSON.parse(getFavorite)) : null;
   }, []);
   console.log('favoriteList', favoriteList);
   return (
@@ -42,7 +40,7 @@ const FavoriteVideo = () => {
                   showDuration={true}
                   // thumbnail={{uri: 'https://i.picsum.photos/id/866/1600/900.jpg'}}
                 />
-                <Share ShowFavorite={false} />
+                <ShareIcons media={`${baseURL}${item?.attributes?.picture?.data[0]?.attributes?.url}`} ShowFavorite={false} />
               </Card>
             );
           }}

@@ -9,4 +9,5 @@ export default {
   red: '#e33636',
   blueSecond: '#988ddc',
   redSecond: '#ee8989',
+  placeholderColor: '#b5b5b5'
 };

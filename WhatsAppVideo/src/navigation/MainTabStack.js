@@ -83,6 +83,9 @@ const HomeStackScreen = ({navigation}) => (
             backgroundColor={Color.primary}
             onPress={() => navigation.openDrawer()}></Icon.Button>
         ),
+        headerTitleStyle:{
+          color: Color.secondary
+        }
       }}
     />
   </HomeStack.Navigator>
@@ -101,6 +104,9 @@ const TrendingStackScreen = ({navigation}) => (
             backgroundColor={Color.primary}
             onPress={() => navigation.openDrawer()}></Icon.Button>
         ),
+        headerTitleStyle:{
+          color: Color.secondary
+        }
       }}
     />
   </TrendingStack.Navigator>
@@ -119,6 +125,9 @@ const StickerStackScreen = ({navigation}) => (
             backgroundColor={Color.primary}
             onPress={() => navigation.openDrawer()}></Icon.Button>
         ),
+        headerTitleStyle:{
+          color: Color.secondary
+        }
       }}
     />
   </StickerStack.Navigator>
@@ -138,6 +147,9 @@ const GifStackScreen = ({navigation}) => (
             backgroundColor={Color.primary}
             onPress={() => navigation.openDrawer()}></Icon.Button>
         ),
+        headerTitleStyle:{
+          color: Color.secondary
+        }
       }}
     />
   </GifStack.Navigator>

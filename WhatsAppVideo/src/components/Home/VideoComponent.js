@@ -9,26 +9,27 @@ import {
   FlatList,
 } from 'react-native';
 import Card from '../Card';
-import Share from '../share/Share';
+import ShareIcons from '../share/ShareIcons';
 import {useQuery} from '@apollo/client';
 import GET_VIDEOS from '../../graphql/queries/Videos';
 import {baseURL} from '../../constants/BaseURL';
 import VideoPlayer from 'react-native-video-player';
 import GET_VIDEOS_BY_CATEGORY from '../../graphql/queries/VideosByCategory';
+import GET_DOWNLOADS from '../../graphql/queries/Downloads';
 import {CategoryContext} from '../../context/CategoryContext';
 import CardLoader from '../Content_Loader/CardLoader';
 import CardNoVideos from '../Content_Loader/CardNoVideos';
 
 const VideoComponent = () => {
   const [favoriteList, setFavoriteList] = useState([]);
+  const [dataApi, setDataApi] = useState([])
   const {infos} = useContext(CategoryContext);
   const resVideos = useQuery(GET_VIDEOS);
   const resCategory = useQuery(GET_VIDEOS_BY_CATEGORY, {
     variables: {id: infos},
   });
-
-  console.log('data=>data', resVideos?.data?.videos?.data);
-
+  const resDownloads = useQuery(GET_DOWNLOADS);
+ // function to add an item from favorite list
   const onFavorite = async item => {
     try {
       //   setItemFavorite(item);
@@ -65,22 +66,24 @@ const VideoComponent = () => {
     return false;
   };
 
-  useEffect(async () => {
-    const getFavorite = await AsyncStorage.getItem('favoriteList');
-    console.log('favorite==>', getFavorite);
-    return getFavorite != null
-      ? setFavoriteList(JSON.parse(getFavorite))
-      : null;
-  }, []);
-  console.log('favoriteListHome', favoriteList);
+  
+  useEffect(() => {
+    if(resVideos || resDownloads){
+      const dataa= [...resVideos?.data?.videos?.data, ...resDownloads.data.downloads.data]
+      setDataApi(dataa)
+    }
+  },[resVideos, resDownloads])
 
-  if (resVideos.loading || resCategory.loading) return <CardLoader />;
+  if (resVideos.loading || resCategory.loading || resDownloads.loading) return <CardLoader />;
+ 
   if (infos == null && resVideos.error) {
-    return <Text>{resVideos.error}</Text>;
+    return <Text>{resVideos?.error}</Text>;
   }
   if (infos !== null && resCategory.error) {
-    return <Text>{resCategory.error}</Text>;
+    return <Text>{resCategory?.error}</Text>;
   }
+
+  console.log('tttt=>', dataApi)
   return (
     <View style={styles.screen}>
       {(infos == null && resVideos?.data?.videos?.data.length > 0) ||
@@ -90,7 +93,7 @@ const VideoComponent = () => {
         <FlatList
           data={
             infos == null
-              ? resVideos?.data?.videos?.data
+              ? dataApi
               : resCategory?.data?.category?.data?.attributes?.videos?.data
           }
           renderItem={({item}) => {
@@ -108,7 +111,8 @@ const VideoComponent = () => {
                   // thumbnail={{uri: 'https://i.picsum.photos/id/866/1600/900.jpg'}}
                 />
                 {/* <Share /> */}
-                <Share
+                <ShareIcons
+                  media ={`${baseURL}${item?.attributes?.picture?.data[0]?.attributes?.url}`}
                   onSevedItem={() =>
                     ifExists(item) ? onRemoveFavorite(item) : onFavorite(item)
                   }
@@ -130,8 +134,9 @@ export default VideoComponent;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    height: '100%',
     padding: 5,
-    alignItems: 'center',
+    
   },
   image: {
     justifyContent: 'center',

@@ -7,7 +7,7 @@ import GET_IMAGES from '../../graphql/queries/Images';
 import GET_IMAGE_BY_CATEGORY from '../../graphql/queries/ImagesByCategory';
 import Card from '../Card';
 import CardLoader from '../Content_Loader/CardLoader';
-import Share from '../share/Share';
+import ShareIcons from '../share/ShareIcons';
 import CardNoVideos from '../Content_Loader/CardNoVideos';
 
 const GifItem = () => {
@@ -51,7 +51,7 @@ const GifItem = () => {
           }}
           style={styles.image}
         />
-        <Share />
+        <ShareIcons media={`${baseURL}${item?.attributes?.picture?.data[0]?.attributes?.url}`} />
       </Card>
     );
   };

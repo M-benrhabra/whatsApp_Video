@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {StyleSheet, View, Image, FlatList, Text} from 'react-native';
 import Card from '../Card';
-import Share from '../share/Share';
+import ShareIcons from '../share/ShareIcons';
 import {CategoryContext} from '../../context/CategoryContext';
 import {useQuery} from '@apollo/client';
 import GET_IMAGE_BY_CATEGORY from '../../graphql/queries/ImagesByCategory';
@@ -47,7 +47,7 @@ const StickerComponent = () => {
           }}
           style={styles.image}
         />
-        <Share />
+        <ShareIcons media={`${baseURL}${item?.attributes?.picture?.data[0]?.attributes?.formats?.small?.url}`} />
       </Card>
     );
   };

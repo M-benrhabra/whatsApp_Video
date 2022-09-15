@@ -7,9 +7,7 @@ const UploadComponent = () => {
     return (
         <View style={styles.screen} >
             <View style={styles.border}>
-            <FontAwesome5.Button style={styles.icon} name='cloud-upload-alt' size={80} color={Color.gray} backgroundColor='transparent' 
-            onPress={() => {console.log('cleck')}}
-            />
+            <FontAwesome5 style={styles.icon} name='cloud-upload-alt' size={80} color={Color.gray} backgroundColor='transparent' />
             </View>
             <Text style={styles.text}>Tap To Upload {"\n"}
             your media</Text>
